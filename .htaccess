@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L,QSA]
+
+
+RewriteRule ^images/(.*)/(.*)$ image.php?tokenId=$1&domain=$2 [L]
+RewriteRule ^(.*)/(.*)$ index.php?tokenId=$1&domain=$2 [L]
