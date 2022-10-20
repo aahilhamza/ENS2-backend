@@ -34,8 +34,8 @@ $metaData = [
     ],
   ],
     "name_length" => strlen($domain), // length of MYNAME
-    "url"=> $_SERVER['SCRIPT_URI'],
-    "image_url" => str_replace('/'.$token.'/' . $domain , "/images/" .$token.'/' . $domain ,$_SERVER['SCRIPT_URI']) ,
+    "url"=> 'https://metadata.ethname.domains/' . $token .'/' . $domain,
+    "image_url"=> 'https://metadata.ethname.domains/images/' . $token .'/' . $domain,
 ];
 if($club){
     $metaData['attributes'][] = [

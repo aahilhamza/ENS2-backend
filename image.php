@@ -3,10 +3,10 @@ $domain = $_GET['domain'];
 $token  = intval($_GET['tokenId']);
 
 
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 $dest = imagecreatefromjpeg('bg.jpg');
-
+error_reporting(E_ALL);
 $color = imagecolorallocate($dest, 255, 255, 255);
 $font_path = 'TwCenClassMTStd-Regular.ttf';
 $string = $domain.".ethereum";
