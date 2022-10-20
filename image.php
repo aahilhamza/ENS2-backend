@@ -2,7 +2,7 @@
 $domain = $_GET['domain'];
 $token  = intval($_GET['tokenId']);
 
-if (strlen($domain) > 20 || !preg_match('/^[a-zA-Z0-9-_]+$/', $domain)) exit("Invalid Name!")
+if (strlen($domain) > 20 || !preg_match('/^[a-zA-Z0-9-_]+$/', $domain)) exit("Invalid Name!");
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
