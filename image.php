@@ -14,7 +14,8 @@ $contractAddress = '0xc88a9879d113c7f3a18392b0fec6630952a85d5c';
 // call contract function
 $domain = $_GET['domain'];
 $contract->at($contractAddress)->call('getUserData', $domain, 'avatar', function ($err, $result) use($domain) {
-    $result = array_shift($result);
+
+
     $handlers = array(
         'jpg'  => ['creation' => 'imagecreatefromjpeg', 'close' => 'imagepng', 'type' => 'image/jpeg'],
         'jpeg' => ['creation' => 'imagecreatefromjpeg', 'close' => 'imagejpg', 'type' => 'image/jpeg'],
@@ -24,8 +25,10 @@ $contract->at($contractAddress)->call('getUserData', $domain, 'avatar', function
     $file = 'bg.png';
 
 
+
     $needResize = false;
-    if(!empty($result)){
+    if($result){
+        $result = array_shift($result);
         $file = $result;
         $extension = strtolower(substr($file, strrpos($file, '.')+1));
         if(!empty( $handlers[$extension])){
